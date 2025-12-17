@@ -1,5 +1,11 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
 import streamlit as st
 import pandas as pd
+
 
 # Import recommendation logic directly
 from api.main import recommend, RecommendRequest
@@ -47,3 +53,4 @@ if st.button("Get Recommendations"):
 
             except Exception as e:
                 st.error(f"Error occurred: {e}")
+
